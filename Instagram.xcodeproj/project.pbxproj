@@ -13,6 +13,7 @@
 		650F03D01E6BFAE3001C3B45 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 650F03CE1E6BFAE3001C3B45 /* Main.storyboard */; };
 		650F03D21E6BFAE3001C3B45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 650F03D11E6BFAE3001C3B45 /* Assets.xcassets */; };
 		650F03D51E6BFAE3001C3B45 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 650F03D31E6BFAE3001C3B45 /* LaunchScreen.storyboard */; };
+		650F03DD1E6C014B001C3B45 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650F03DC1E6C014B001C3B45 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		650F03D11E6BFAE3001C3B45 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		650F03D41E6BFAE3001C3B45 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		650F03D61E6BFAE3001C3B45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		650F03DC1E6C014B001C3B45 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D86D1EF5078F6985F38AC115 /* Pods-Instagram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instagram.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Instagram/Pods-Instagram.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -76,6 +78,7 @@
 				650F03D11E6BFAE3001C3B45 /* Assets.xcassets */,
 				650F03D31E6BFAE3001C3B45 /* LaunchScreen.storyboard */,
 				650F03D61E6BFAE3001C3B45 /* Info.plist */,
+				650F03DC1E6C014B001C3B45 /* LoginViewController.swift */,
 			);
 			path = Instagram;
 			sourceTree = "<group>";
@@ -212,6 +215,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				650F03DD1E6C014B001C3B45 /* LoginViewController.swift in Sources */,
 				650F03CD1E6BFAE3001C3B45 /* ViewController.swift in Sources */,
 				650F03CB1E6BFAE3001C3B45 /* AppDelegate.swift in Sources */,
 			);
