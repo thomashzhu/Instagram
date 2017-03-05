@@ -1,0 +1,24 @@
+PODS:
+  - Bolts/Tasks (1.8.4)
+  - Parse (1.14.3):
+    - Bolts/Tasks (~> 1.8)
+
+DEPENDENCIES:
+  - Parse (from `https://github.com/ParsePlatform/Parse-SDK-iOS-OSX.git`)
+
+EXTERNAL SOURCES:
+  Parse:
+    :git: https://github.com/ParsePlatform/Parse-SDK-iOS-OSX.git
+
+CHECKOUT OPTIONS:
+  Parse:
+    :commit: 121146a8d4515b454d6567e5d5f63ed23563810e
+    :git: https://github.com/ParsePlatform/Parse-SDK-iOS-OSX.git
+
+SPEC CHECKSUMS:
+  Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
+  Parse: 9f422da603adc3cda30e688feba7c03ee4b38a4e
+
+PODFILE CHECKSUM: b991f3fa3c14a59f4f779d73f1121efbd96c88c0
+
+COCOAPODS: 1.1.0.rc.2
