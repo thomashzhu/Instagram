@@ -9,11 +9,14 @@
 /* Begin PBXBuildFile section */
 		1CD2ED827EFEB32F5CBA0D13 /* Pods_Instagram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B389457E7E4449F0464B22E /* Pods_Instagram.framework */; };
 		650F03CB1E6BFAE3001C3B45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650F03CA1E6BFAE3001C3B45 /* AppDelegate.swift */; };
-		650F03CD1E6BFAE3001C3B45 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650F03CC1E6BFAE3001C3B45 /* ViewController.swift */; };
+		650F03CD1E6BFAE3001C3B45 /* CaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650F03CC1E6BFAE3001C3B45 /* CaptureViewController.swift */; };
 		650F03D01E6BFAE3001C3B45 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 650F03CE1E6BFAE3001C3B45 /* Main.storyboard */; };
 		650F03D21E6BFAE3001C3B45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 650F03D11E6BFAE3001C3B45 /* Assets.xcassets */; };
 		650F03D51E6BFAE3001C3B45 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 650F03D31E6BFAE3001C3B45 /* LaunchScreen.storyboard */; };
 		650F03DD1E6C014B001C3B45 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650F03DC1E6C014B001C3B45 /* LoginViewController.swift */; };
+		658EFF301E72319F00C53F6B /* InstagramClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658EFF2F1E72319F00C53F6B /* InstagramClient.swift */; };
+		658EFF331E72348800C53F6B /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658EFF321E72348800C53F6B /* Post.swift */; };
+		658EFF351E723FD100C53F6B /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658EFF341E723FD100C53F6B /* MainTabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,12 +24,15 @@
 		5B389457E7E4449F0464B22E /* Pods_Instagram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Instagram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		650F03C71E6BFAE3001C3B45 /* Instagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		650F03CA1E6BFAE3001C3B45 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		650F03CC1E6BFAE3001C3B45 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		650F03CC1E6BFAE3001C3B45 /* CaptureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureViewController.swift; sourceTree = "<group>"; };
 		650F03CF1E6BFAE3001C3B45 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		650F03D11E6BFAE3001C3B45 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		650F03D41E6BFAE3001C3B45 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		650F03D61E6BFAE3001C3B45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		650F03DC1E6C014B001C3B45 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		658EFF2F1E72319F00C53F6B /* InstagramClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstagramClient.swift; sourceTree = "<group>"; };
+		658EFF321E72348800C53F6B /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		658EFF341E723FD100C53F6B /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		D86D1EF5078F6985F38AC115 /* Pods-Instagram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instagram.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Instagram/Pods-Instagram.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -72,15 +78,34 @@
 		650F03C91E6BFAE3001C3B45 /* Instagram */ = {
 			isa = PBXGroup;
 			children = (
+				658EFF311E72348000C53F6B /* Model */,
+				658EFF2E1E72317500C53F6B /* API */,
 				650F03CA1E6BFAE3001C3B45 /* AppDelegate.swift */,
-				650F03CC1E6BFAE3001C3B45 /* ViewController.swift */,
+				650F03CC1E6BFAE3001C3B45 /* CaptureViewController.swift */,
 				650F03CE1E6BFAE3001C3B45 /* Main.storyboard */,
 				650F03D11E6BFAE3001C3B45 /* Assets.xcassets */,
 				650F03D31E6BFAE3001C3B45 /* LaunchScreen.storyboard */,
 				650F03D61E6BFAE3001C3B45 /* Info.plist */,
 				650F03DC1E6C014B001C3B45 /* LoginViewController.swift */,
+				658EFF341E723FD100C53F6B /* MainTabBarController.swift */,
 			);
 			path = Instagram;
+			sourceTree = "<group>";
+		};
+		658EFF2E1E72317500C53F6B /* API */ = {
+			isa = PBXGroup;
+			children = (
+				658EFF2F1E72319F00C53F6B /* InstagramClient.swift */,
+			);
+			name = API;
+			sourceTree = "<group>";
+		};
+		658EFF311E72348000C53F6B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				658EFF321E72348800C53F6B /* Post.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		93EAD0E8A9719294864E9F3A /* Frameworks */ = {
@@ -216,7 +241,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				650F03DD1E6C014B001C3B45 /* LoginViewController.swift in Sources */,
-				650F03CD1E6BFAE3001C3B45 /* ViewController.swift in Sources */,
+				658EFF301E72319F00C53F6B /* InstagramClient.swift in Sources */,
+				658EFF351E723FD100C53F6B /* MainTabBarController.swift in Sources */,
+				650F03CD1E6BFAE3001C3B45 /* CaptureViewController.swift in Sources */,
+				658EFF331E72348800C53F6B /* Post.swift in Sources */,
 				650F03CB1E6BFAE3001C3B45 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,7 +311,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -327,7 +355,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";

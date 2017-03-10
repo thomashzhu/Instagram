@@ -18,6 +18,9 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        // TODO: remove these!!
+        usernameField.text = "c"
+        passwordField.text = "c"
     }
     
     @IBAction func onSignIn(_ sender: Any) {
