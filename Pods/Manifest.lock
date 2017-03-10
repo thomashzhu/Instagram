@@ -2,23 +2,41 @@ PODS:
   - Bolts/Tasks (1.8.4)
   - Parse (1.14.3):
     - Bolts/Tasks (~> 1.8)
+  - ParseUI (1.2.0):
+    - Bolts/Tasks (~> 1.3)
+    - Parse (~> 1.9)
+  - PKHUD (4.2.0)
 
 DEPENDENCIES:
   - Parse (from `https://github.com/ParsePlatform/Parse-SDK-iOS-OSX.git`)
+  - ParseUI (from `https://github.com/ParsePlatform/ParseUI-iOS.git`)
+  - PKHUD (from `https://github.com/pkluz/PKHUD.git`)
 
 EXTERNAL SOURCES:
   Parse:
     :git: https://github.com/ParsePlatform/Parse-SDK-iOS-OSX.git
+  ParseUI:
+    :git: https://github.com/ParsePlatform/ParseUI-iOS.git
+  PKHUD:
+    :git: https://github.com/pkluz/PKHUD.git
 
 CHECKOUT OPTIONS:
   Parse:
     :commit: 121146a8d4515b454d6567e5d5f63ed23563810e
     :git: https://github.com/ParsePlatform/Parse-SDK-iOS-OSX.git
+  ParseUI:
+    :commit: 88981faf539501a5a6e30795a53736c8f713b0c5
+    :git: https://github.com/ParsePlatform/ParseUI-iOS.git
+  PKHUD:
+    :commit: 8fef55f1d2473010fb04541e52bc99653616928b
+    :git: https://github.com/pkluz/PKHUD.git
 
 SPEC CHECKSUMS:
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
   Parse: 9f422da603adc3cda30e688feba7c03ee4b38a4e
+  ParseUI: af2eba584799da4a9fbdac0e178662d7438b502e
+  PKHUD: c7e8c1595d687b41a10aac59589c357bfcb7df61
 
-PODFILE CHECKSUM: b991f3fa3c14a59f4f779d73f1121efbd96c88c0
+PODFILE CHECKSUM: d5879f47f8ce2ac67603e2a6bc40e30948270d55
 
 COCOAPODS: 1.1.0.rc.2

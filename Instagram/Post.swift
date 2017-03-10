@@ -11,6 +11,24 @@ import Parse
 
 class Post: NSObject {
     
+    let creationTime: TimeInterval?
+    let media: PFFile?
+    let username: String?
+    let caption: String?
+    let likesCount: Int?
+    let commentsCount: Int?
+    
+    init(pfObject: PFObject) {
+        print(pfObject)
+        
+        creationTime = pfObject["creationTime"] as? TimeInterval
+        media = pfObject["media"] as? PFFile
+        username = pfObject["username"] as? String
+        caption = pfObject["caption"] as? String
+        likesCount = pfObject["likesCount"] as? Int
+        commentsCount = pfObject["commentsCount"] as? Int
+    }
+    
     /**
      Method to add a user post to Parse (uploading image file)
      
@@ -23,8 +41,9 @@ class Post: NSObject {
         let post = PFObject(className: "Post")
         
         // Add relevant fields to the object
+        post["creationTime"] = Date.timeIntervalSinceReferenceDate
         post["media"] = getPFFileFromImage(image: image) // PFFile column type
-        post["author"] = PFUser.current() // Pointer column type that points to PFUser
+        post["username"] = PFUser.current()?.username
         post["caption"] = caption
         post["likesCount"] = 0
         post["commentsCount"] = 0
