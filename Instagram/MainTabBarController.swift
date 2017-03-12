@@ -13,7 +13,12 @@ class MainTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
+        let themeGreen = UIColor(red: 80/255,
+                                 green: 229/255,
+                                 blue: 162/255,
+                                 alpha: 1)
+        tabBar.barTintColor = themeGreen
+        tabBar.tintColor = UIColor.white
     }
 
     override func didReceiveMemoryWarning() {

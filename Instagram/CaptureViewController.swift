@@ -20,6 +20,8 @@ class CaptureViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet weak var selectedImageView: UIImageView!
     @IBOutlet weak var captureTextField: UITextField!
     
+    @IBOutlet weak var postButton: UIButton!
+    
     let picker = UIImagePickerController()
     
     override func viewDidLoad() {
@@ -46,6 +48,16 @@ class CaptureViewController: UIViewController, UIImagePickerControllerDelegate, 
         updateUserProfileImage()
         
         currentUsernameLabel.text = PFUser.current()?.username
+        
+        view.layoutIfNeeded()
+        let cornerRadius = postButton.frame.height / 2
+        postButton.layer.cornerRadius = cornerRadius
+        postButton.clipsToBounds = true
+        postButton.layer.borderColor = UIColor(red: 80/255,
+                                               green: 229/255,
+                                               blue: 162/255,
+                                               alpha: 1).cgColor
+        postButton.layer.borderWidth = 2
     }
     
     //MARK: - Delegates

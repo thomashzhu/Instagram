@@ -19,6 +19,8 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var profileImageView: PFImageView!
     @IBOutlet var profileImageTapRecognizer: UITapGestureRecognizer!
     
+    @IBOutlet weak var hintLabel: UILabel!
+    
     var userId: String! = PFUser.current()?.objectId
     let picker = UIImagePickerController()
     
@@ -35,7 +37,7 @@ class ProfileViewController: UIViewController {
             closeButton.isHidden = true
             logoutButton.isHidden = true
         } else {
-            closeButton.isHidden = false
+            closeButton.isHidden = true     // pushing modally to come later
             logoutButton.isHidden = false
         }
         
@@ -102,6 +104,7 @@ class ProfileViewController: UIViewController {
         if let userProfileImageFile = user.userProfileImageFile {
             closeButton.setImage(UIImage(named: "close_white"), for: .normal)
             logoutButton.setImage(UIImage(named: "log_out_white"), for: .normal)
+            hintLabel.textColor = UIColor.white
             
             backgroundImageView.file = userProfileImageFile
             backgroundImageView.loadInBackground()
