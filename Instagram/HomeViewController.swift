@@ -30,8 +30,27 @@ class HomeViewController: UIViewController {
         statusBarBackgroundView.tintColor = themeGreen
         self.view.addSubview(statusBarBackgroundView)
         
-        navigationController?.navigationBar.barTintColor = themeGreen
-        navigationController?.navigationBar.tintColor = UIColor.white
+        if let navigationBar = navigationController?.navigationBar {
+            navigationBar.barTintColor = themeGreen
+            navigationBar.tintColor = UIColor.white
+            
+            let height = navigationBar.frame.height
+            let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 215 * (height * 0.75) / 58, height: height * 0.75))
+            imageView.contentMode = .scaleAspectFit
+            
+            let image = UIImage(named: "instagram_text")
+            imageView.image = image
+            
+            navigationItem.titleView = imageView
+            navigationItem.titleView?.alpha = 0.0
+            
+            UIView.animate(withDuration: 2.0,
+                           delay: 0.0,
+                           options: .curveEaseOut,
+                           animations: { self.navigationItem.titleView?.alpha = 1.0 },
+                           completion: nil
+            )
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
