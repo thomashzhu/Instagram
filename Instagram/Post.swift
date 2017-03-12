@@ -13,17 +13,15 @@ class Post: NSObject {
     
     let creationTime: TimeInterval?
     let media: PFFile?
-    let username: String?
+    let authorId: String?
     let caption: String?
     let likesCount: Int?
     let commentsCount: Int?
     
     init(pfObject: PFObject) {
-        print(pfObject)
-        
         creationTime = pfObject["creationTime"] as? TimeInterval
         media = pfObject["media"] as? PFFile
-        username = pfObject["username"] as? String
+        authorId = pfObject["authorId"] as? String
         caption = pfObject["caption"] as? String
         likesCount = pfObject["likesCount"] as? Int
         commentsCount = pfObject["commentsCount"] as? Int
@@ -42,8 +40,8 @@ class Post: NSObject {
         
         // Add relevant fields to the object
         post["creationTime"] = Date.timeIntervalSinceReferenceDate
-        post["media"] = getPFFileFromImage(image: image) // PFFile column type
-        post["username"] = PFUser.current()?.username
+        post["media"] = ParseUtil.getPFFileFromImage(image: image) // PFFile column type
+        post["authorId"] = PFUser.current()?.objectId
         post["caption"] = caption
         post["likesCount"] = 0
         post["commentsCount"] = 0
@@ -52,36 +50,17 @@ class Post: NSObject {
         post.saveInBackground(block: completion)
     }
     
-    /**
-     Method to convert UIImage to PFFile
-     
-     - parameter image: Image that the user wants to upload to parse
-     
-     - returns: PFFile for the the data in the image
-     */
-    class func getPFFileFromImage(image: UIImage?) -> PFFile? {
-        // check if image is not nil
-        if let image = image {
-            if let resizedImage = resize(image: image, newScale: 0.5) {
-                // get image data and check if that is not nil
-                if let imageData = UIImagePNGRepresentation(resizedImage) {
-                    return PFFile(name: "image.png", data: imageData)
-                }
+    class func getMostRecentPosts(numberOfPosts: Int, completion: @escaping ([PFObject]) -> Void) {
+        let query = PFQuery(className: "Post")
+        query.order(byDescending: "creationTime")
+        query.limit = numberOfPosts
+        
+        query.findObjectsInBackground { (posts: [PFObject]?, error: Error?) -> Void in
+            if let posts = posts {
+                completion(posts)
+            } else {
+                print(error?.localizedDescription ?? "Unknown error")
             }
         }
-        return nil
-    }
-    
-    private class func resize(image: UIImage, newScale: CGFloat) -> UIImage? {
-        let size = image.size
-        let resizeImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: size.width * newScale, height: size.height * newScale))
-        resizeImageView.contentMode = UIViewContentMode.scaleAspectFill
-        resizeImageView.image = image
-        
-        UIGraphicsBeginImageContext(resizeImageView.frame.size)
-        resizeImageView.layer.render(in: UIGraphicsGetCurrentContext()!)
-        let newImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        return newImage
     }
 }

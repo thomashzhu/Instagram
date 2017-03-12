@@ -23,17 +23,12 @@ class HomeViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
         collectionView.collectionViewLayout = {
-            let spacing: CGFloat = 8.0
-            let numberOfCellPerRow: CGFloat = 2
-            
-            let width: CGFloat = collectionView.frame.width - spacing * 2
-            
             let layout = UICollectionViewFlowLayout()
-            layout.sectionInset = UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing)
-            layout.itemSize = CGSize(
-                width: width / numberOfCellPerRow - (numberOfCellPerRow - 1) * spacing,
-                height: width / numberOfCellPerRow - (numberOfCellPerRow - 1) * spacing)
+            layout.minimumInteritemSpacing = 1
+            layout.minimumLineSpacing = 1
             return layout
         }()
         
@@ -41,7 +36,7 @@ class HomeViewController: UIViewController {
     }
     
     private func loadPosts() {
-        ParseClient.getMostRecentPosts(numberOfPosts: 20) { pfObjects in
+        Post.getMostRecentPosts(numberOfPosts: 20) { pfObjects in
             self.posts = pfObjects.map { pfObject in return Post(pfObject: pfObject) }
             self.collectionView.reloadData()
         }
@@ -54,15 +49,26 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PostCell", for: indexPath) as? PostCell {
             let post = posts[indexPath.row]
             
+            if let authorId = post.authorId {
+                User.getUserData(userId: authorId) { pfObject in
+                    let user = User(pfObject: pfObject)
+                    DispatchQueue.main.async {
+                        cell.userProfileImageView.file = user.userProfileImageFile
+                        cell.userProfileImageView.loadInBackground()
+                        cell.userProfileImageView.userId = user.id
+                        
+                        cell.usernameLabel.text = user.username
+                    }
+                }
+            }
+            
             cell.postImageView.file = post.media
             cell.postImageView.loadInBackground()
-            
-            cell.usernameLabel.text = post.username
             
             if let creationTime = post.creationTime {
                 let postDateFormatter: DateFormatter = {
                     let f = DateFormatter()
-                    f.dateFormat = "MM/dd/yyyy @ hh:mm:ss"
+                    f.dateFormat = "MMM d, yyyy hh:mm"
                     return f
                 }()
                 cell.creationTimeLabel.text = postDateFormatter.string(from: Date(timeIntervalSinceReferenceDate: creationTime))
@@ -72,6 +78,15 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         }
         
         return UICollectionViewCell()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let spacing: CGFloat = 1.0
+        let numberOfCellPerRow: CGFloat = 2
+        
+        let width: CGFloat = collectionView.bounds.width
+        return CGSize(width: width / numberOfCellPerRow - (numberOfCellPerRow - 1) * spacing,
+                      height: width / numberOfCellPerRow - (numberOfCellPerRow - 1) * spacing)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

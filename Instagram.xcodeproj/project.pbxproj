@@ -19,6 +19,9 @@
 		658EFF351E723FD100C53F6B /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658EFF341E723FD100C53F6B /* MainTabBarController.swift */; };
 		658EFF391E7242F100C53F6B /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658EFF381E7242F100C53F6B /* PostCell.swift */; };
 		658EFF3B1E72438100C53F6B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658EFF3A1E72438100C53F6B /* HomeViewController.swift */; };
+		65D874D91E746A7700FCD8F6 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D874D81E746A7700FCD8F6 /* ProfileViewController.swift */; };
+		65D874DB1E74733400FCD8F6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D874DA1E74733400FCD8F6 /* User.swift */; };
+		65D874DD1E74831000FCD8F6 /* ClickablePFImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D874DC1E74831000FCD8F6 /* ClickablePFImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +40,9 @@
 		658EFF341E723FD100C53F6B /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		658EFF381E7242F100C53F6B /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		658EFF3A1E72438100C53F6B /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		65D874D81E746A7700FCD8F6 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		65D874DA1E74733400FCD8F6 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		65D874DC1E74831000FCD8F6 /* ClickablePFImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClickablePFImageView.swift; sourceTree = "<group>"; };
 		D86D1EF5078F6985F38AC115 /* Pods-Instagram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instagram.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Instagram/Pods-Instagram.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -85,7 +91,7 @@
 				658EFF371E7242B100C53F6B /* Views */,
 				658EFF361E7242AE00C53F6B /* Controllers */,
 				658EFF311E72348000C53F6B /* Models */,
-				658EFF2E1E72317500C53F6B /* API */,
+				658EFF2E1E72317500C53F6B /* Utilities */,
 				650F03CA1E6BFAE3001C3B45 /* AppDelegate.swift */,
 				650F03CE1E6BFAE3001C3B45 /* Main.storyboard */,
 				650F03D11E6BFAE3001C3B45 /* Assets.xcassets */,
@@ -95,18 +101,19 @@
 			path = Instagram;
 			sourceTree = "<group>";
 		};
-		658EFF2E1E72317500C53F6B /* API */ = {
+		658EFF2E1E72317500C53F6B /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
 				658EFF2F1E72319F00C53F6B /* ParseClient.swift */,
 			);
-			name = API;
+			name = Utilities;
 			sourceTree = "<group>";
 		};
 		658EFF311E72348000C53F6B /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				658EFF321E72348800C53F6B /* Post.swift */,
+				65D874DA1E74733400FCD8F6 /* User.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -118,6 +125,7 @@
 				650F03DC1E6C014B001C3B45 /* LoginViewController.swift */,
 				658EFF341E723FD100C53F6B /* MainTabBarController.swift */,
 				658EFF3A1E72438100C53F6B /* HomeViewController.swift */,
+				65D874D81E746A7700FCD8F6 /* ProfileViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -126,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				658EFF381E7242F100C53F6B /* PostCell.swift */,
+				65D874DC1E74831000FCD8F6 /* ClickablePFImageView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -262,13 +271,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65D874DD1E74831000FCD8F6 /* ClickablePFImageView.swift in Sources */,
 				650F03DD1E6C014B001C3B45 /* LoginViewController.swift in Sources */,
 				658EFF301E72319F00C53F6B /* ParseClient.swift in Sources */,
 				658EFF351E723FD100C53F6B /* MainTabBarController.swift in Sources */,
 				650F03CD1E6BFAE3001C3B45 /* CaptureViewController.swift in Sources */,
 				658EFF3B1E72438100C53F6B /* HomeViewController.swift in Sources */,
 				658EFF331E72348800C53F6B /* Post.swift in Sources */,
+				65D874D91E746A7700FCD8F6 /* ProfileViewController.swift in Sources */,
 				658EFF391E7242F100C53F6B /* PostCell.swift in Sources */,
+				65D874DB1E74733400FCD8F6 /* User.swift in Sources */,
 				650F03CB1E6BFAE3001C3B45 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -335,7 +347,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -379,7 +391,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -396,6 +408,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = L398DL783R;
 				INFOPLIST_FILE = Instagram/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.thomaszhu.Instagram;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -411,6 +424,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = L398DL783R;
 				INFOPLIST_FILE = Instagram/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.thomaszhu.Instagram;
 				PRODUCT_NAME = "$(TARGET_NAME)";
