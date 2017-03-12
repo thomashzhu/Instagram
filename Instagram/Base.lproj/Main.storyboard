@@ -68,7 +68,7 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ehR-7L-cZC">
                                                 <rect key="frame" x="0.0" y="0.0" width="114" height="40"/>
-                                                <color key="backgroundColor" red="0.31238972195628911" green="0.89723322021116136" blue="0.63656171548923612" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" red="0.31372549019607843" green="0.89803921568627454" blue="0.63529411764705879" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
                                                 <state key="normal" title="Login"/>
                                                 <connections>

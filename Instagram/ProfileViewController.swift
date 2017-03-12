@@ -33,8 +33,10 @@ class ProfileViewController: UIViewController {
         if let tabBarController = UIApplication.shared.keyWindow?.rootViewController as? UITabBarController,
            let _ = tabBarController.selectedViewController as? UINavigationController {
             closeButton.isHidden = true
+            logoutButton.isHidden = true
         } else {
             closeButton.isHidden = false
+            logoutButton.isHidden = false
         }
         
         // Apply blur effect to background

@@ -20,6 +20,18 @@ class HomeViewController: UIViewController {
         
         collectionView.dataSource = self
         collectionView.delegate = self
+        
+        let themeGreen = UIColor(red: 80/255,
+                                 green: 229/255,
+                                 blue: 162/255,
+                                 alpha: 1)
+        
+        let statusBarBackgroundView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: UIScreen.main.bounds.size.width, height: 20.0))
+        statusBarBackgroundView.tintColor = themeGreen
+        self.view.addSubview(statusBarBackgroundView)
+        
+        navigationController?.navigationBar.barTintColor = themeGreen
+        navigationController?.navigationBar.tintColor = UIColor.white
     }
     
     override func viewWillAppear(_ animated: Bool) {
