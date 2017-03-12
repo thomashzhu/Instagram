@@ -8,37 +8,46 @@
 
 import UIKit
 import Parse
+import PKHUD
 
 class LoginViewController: UIViewController {
 
-    @IBOutlet weak var usernameField: UITextField!
-    @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var usernameField: LoginTextField!
+    @IBOutlet weak var passwordField: LoginTextField!
+    
+    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var registerButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-        // TODO: remove these!!
-        usernameField.text = "c"
-        passwordField.text = "c"
+        loginButton.layer.cornerRadius = 20
+        loginButton.clipsToBounds = true
+        
+        registerButton.layer.cornerRadius = 20
+        registerButton.clipsToBounds = true
     }
     
-    @IBAction func onSignIn(_ sender: Any) {
+    @IBAction func loginButtonTapped(_ sender: Any) {
         
         if let username = usernameField.text, let password = passwordField.text {
+            HUD.show(.progress)
+            
             PFUser.logInWithUsername(inBackground: username, password: password) { (user: PFUser?, error: Error?) -> Void in
                 if let _ = user {
-                    print("You're logged in!")
+                    HUD.hide(animated: true)
                     self.performSegue(withIdentifier: "LoginSegue", sender: nil)
                 } else {
-                    print("User login failed.")
+                    HUD.flash(.error)
                     print(error?.localizedDescription ?? "Unknown error")
                 }
             }
         }
     }
     
-    @IBAction func onSignUp(_ sender: Any) {
+    @IBAction func registerButtonTapped(_ sender: Any) {
+        
+        HUD.show(.progress)
         
         // initialize a user object
         let newUser = PFUser()
@@ -50,9 +59,10 @@ class LoginViewController: UIViewController {
         // call sign up function on the object
         newUser.signUpInBackground { (success: Bool, error: Error?) in
             if success {
-                print("Yay, created a user!")
+                HUD.hide(animated: true)
                 self.performSegue(withIdentifier: "LoginSegue", sender: nil)
             } else if let error = error as? NSError {
+                HUD.flash(.error)
                 switch error.code {
                 case 202:
                     print("User name is taken")

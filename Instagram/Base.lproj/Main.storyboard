@@ -23,55 +23,102 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="AW6-0U-Hca" userLabel="Main">
-                                <rect key="frame" x="65.5" y="183.5" width="244" height="300"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_background" translatesAutoresizingMaskIntoConstraints="NO" id="oyA-Yd-8De">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <visualEffectView opaque="NO" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="vcJ-wT-fBf">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="a3r-DH-TuM">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="AW6-0U-Hca" userLabel="Main">
+                                <rect key="frame" x="66" y="203.5" width="244" height="261.5"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TUq-2v-4lF">
-                                        <rect key="frame" x="0.0" y="0.0" width="244" height="30"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bOV-w7-Gxz">
+                                        <rect key="frame" x="0.0" y="0.0" width="244" height="51"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="37"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instagram is a place where people find, share and explore all kinds of amazing visuals. Let's go!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RlW-SD-1Sf">
+                                        <rect key="frame" x="0.0" y="71" width="244" height="30.5"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="11"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TUq-2v-4lF" customClass="LoginTextField" customModule="Instagram" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="121.5" width="244" height="30"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="12"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hqb-MK-NlS">
-                                        <rect key="frame" x="0.0" y="90" width="244" height="30"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hqb-MK-NlS" customClass="LoginTextField" customModule="Instagram" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="171.5" width="244" height="30"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="12"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ehR-7L-cZC">
-                                        <rect key="frame" x="0.0" y="180" width="244" height="30"/>
-                                        <state key="normal" title="Sign in"/>
-                                        <connections>
-                                            <action selector="onSignIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="e1Y-hb-MWN"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="stB-Q6-M1o">
-                                        <rect key="frame" x="0.0" y="270" width="244" height="30"/>
-                                        <state key="normal" title="Sign up"/>
-                                        <connections>
-                                            <action selector="onSignUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NuO-y0-g1v"/>
-                                        </connections>
-                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="rxL-O2-8bO">
+                                        <rect key="frame" x="0.0" y="221.5" width="244" height="40"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ehR-7L-cZC">
+                                                <rect key="frame" x="0.0" y="0.0" width="114" height="40"/>
+                                                <color key="backgroundColor" red="0.31238972195628911" green="0.89723322021116136" blue="0.63656171548923612" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
+                                                <state key="normal" title="Login"/>
+                                                <connections>
+                                                    <action selector="loginButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="83f-k4-JBd"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="stB-Q6-M1o">
+                                                <rect key="frame" x="130" y="0.0" width="114" height="40"/>
+                                                <color key="backgroundColor" red="0.31238972195628911" green="0.89723322021116136" blue="0.63656171548923612" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
+                                                <state key="normal" title="Register"/>
+                                                <connections>
+                                                    <action selector="registerButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AWm-CA-Ead"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="KLV-Cp-IWO"/>
+                                        </constraints>
+                                    </stackView>
                                 </subviews>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="AW6-0U-Hca" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.65" id="11u-KD-Xkk"/>
+                            <constraint firstAttribute="trailing" secondItem="oyA-Yd-8De" secondAttribute="trailing" id="5Mo-Yr-CpQ"/>
+                            <constraint firstItem="vcJ-wT-fBf" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="64l-hX-mw4"/>
+                            <constraint firstItem="oyA-Yd-8De" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="9dL-cg-rNo"/>
+                            <constraint firstItem="vcJ-wT-fBf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Mhr-k2-5oU"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="vcJ-wT-fBf" secondAttribute="bottom" id="QRg-fx-zw4"/>
+                            <constraint firstAttribute="trailing" secondItem="vcJ-wT-fBf" secondAttribute="trailing" id="Whq-DN-y8Q"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="oyA-Yd-8De" secondAttribute="bottom" id="p4H-wI-L00"/>
+                            <constraint firstItem="oyA-Yd-8De" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="q0x-Bn-kZg"/>
                             <constraint firstItem="AW6-0U-Hca" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="tfE-f0-goq"/>
-                            <constraint firstItem="AW6-0U-Hca" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.45" id="yll-LH-oaV"/>
                             <constraint firstItem="AW6-0U-Hca" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zed-9h-lk6"/>
                         </constraints>
                     </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
-                        <outlet property="passwordField" destination="Hqb-MK-NlS" id="EKE-b3-bei"/>
-                        <outlet property="usernameField" destination="TUq-2v-4lF" id="lrv-fC-rBj"/>
+                        <outlet property="loginButton" destination="ehR-7L-cZC" id="Fbg-Bq-aeD"/>
+                        <outlet property="passwordField" destination="Hqb-MK-NlS" id="q6j-mG-0QS"/>
+                        <outlet property="registerButton" destination="stB-Q6-M1o" id="5ze-5m-2IX"/>
+                        <outlet property="usernameField" destination="TUq-2v-4lF" id="ldE-cg-Lhp"/>
                         <segue destination="bft-yg-KTB" kind="presentation" identifier="LoginSegue" id="iU6-Ry-pdE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="68" y="36"/>
+            <point key="canvasLocation" x="68" y="35.532233883058474"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="OTY-qP-guG">
@@ -445,6 +492,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="login_background" width="1280" height="853"/>
         <image name="profile-placeholder" width="600" height="600"/>
     </resources>
 </document>

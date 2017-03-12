@@ -22,6 +22,7 @@
 		65D874D91E746A7700FCD8F6 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D874D81E746A7700FCD8F6 /* ProfileViewController.swift */; };
 		65D874DB1E74733400FCD8F6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D874DA1E74733400FCD8F6 /* User.swift */; };
 		65D874DD1E74831000FCD8F6 /* ClickablePFImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D874DC1E74831000FCD8F6 /* ClickablePFImageView.swift */; };
+		65D874DF1E750E5B00FCD8F6 /* LoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D874DE1E750E5B00FCD8F6 /* LoginTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		65D874D81E746A7700FCD8F6 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		65D874DA1E74733400FCD8F6 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		65D874DC1E74831000FCD8F6 /* ClickablePFImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClickablePFImageView.swift; sourceTree = "<group>"; };
+		65D874DE1E750E5B00FCD8F6 /* LoginTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginTextField.swift; sourceTree = "<group>"; };
 		D86D1EF5078F6985F38AC115 /* Pods-Instagram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instagram.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Instagram/Pods-Instagram.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -135,6 +137,7 @@
 			children = (
 				658EFF381E7242F100C53F6B /* PostCell.swift */,
 				65D874DC1E74831000FCD8F6 /* ClickablePFImageView.swift */,
+				65D874DE1E750E5B00FCD8F6 /* LoginTextField.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 				658EFF331E72348800C53F6B /* Post.swift in Sources */,
 				65D874D91E746A7700FCD8F6 /* ProfileViewController.swift in Sources */,
 				658EFF391E7242F100C53F6B /* PostCell.swift in Sources */,
+				65D874DF1E750E5B00FCD8F6 /* LoginTextField.swift in Sources */,
 				65D874DB1E74733400FCD8F6 /* User.swift in Sources */,
 				650F03CB1E6BFAE3001C3B45 /* AppDelegate.swift in Sources */,
 			);
