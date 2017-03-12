@@ -8,7 +8,6 @@
 
 import UIKit
 
-@IBDesignable
 class LoginTextField: UITextField {
 
     let padding = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15);

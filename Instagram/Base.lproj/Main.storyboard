@@ -384,8 +384,8 @@
                                             <view contentMode="scaleToFill" verticalHuggingPriority="245" translatesAutoresizingMaskIntoConstraints="NO" id="Xgw-Fm-P7e">
                                                 <rect key="frame" x="111.5" y="0.0" width="120" height="313.5"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="245" image="profile-placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="M8e-oa-0ea" customClass="PFImageView">
-                                                        <rect key="frame" x="0.0" y="97" width="120" height="120"/>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="245" image="profile_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="M8e-oa-0ea" customClass="PFImageView">
+                                                        <rect key="frame" x="0.0" y="96.5" width="120" height="120"/>
                                                         <gestureRecognizers/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="M8e-oa-0ea" secondAttribute="height" multiplier="1:1" id="y1C-Ul-xqn"/>
@@ -422,22 +422,52 @@
                                     <constraint firstAttribute="bottom" secondItem="k0R-gL-Ept" secondAttribute="bottom" id="uSF-3N-DQa"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ox3-nD-Euq">
+                                <rect key="frame" x="16" y="36" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="1zN-1a-aDp"/>
+                                    <constraint firstAttribute="width" constant="30" id="kJP-NO-7Yk"/>
+                                </constraints>
+                                <state key="normal" image="close_dark_gray">
+                                    <color key="titleColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="closeButtonTapped:" destination="3uV-c2-tHp" eventType="touchUpInside" id="Q4X-Fg-MLJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H7e-ac-TxA">
+                                <rect key="frame" x="329" y="36" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="6bT-nv-kv2"/>
+                                    <constraint firstAttribute="height" constant="30" id="ade-sO-flQ"/>
+                                </constraints>
+                                <state key="normal" title="Log out" image="log_out_dark_gray"/>
+                                <connections>
+                                    <action selector="logoutButtonTapped:" destination="3uV-c2-tHp" eventType="touchUpInside" id="jpE-dX-7jm"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ZSY-fQ-Mtb" firstAttribute="top" secondItem="6pn-Ti-4xV" secondAttribute="top" id="1SY-1n-NDA"/>
                             <constraint firstItem="ZSY-fQ-Mtb" firstAttribute="leading" secondItem="6pn-Ti-4xV" secondAttribute="leading" id="HmA-gk-ESo"/>
+                            <constraint firstItem="Ox3-nD-Euq" firstAttribute="leading" secondItem="1s8-rf-4Od" secondAttribute="leading" id="QcB-e2-hi5"/>
+                            <constraint firstItem="H7e-ac-TxA" firstAttribute="trailing" secondItem="1s8-rf-4Od" secondAttribute="trailing" id="avU-hJ-bK5"/>
                             <constraint firstItem="1s8-rf-4Od" firstAttribute="height" secondItem="6pn-Ti-4xV" secondAttribute="height" multiplier="0.5" id="b5X-Dx-cB8"/>
+                            <constraint firstItem="H7e-ac-TxA" firstAttribute="top" secondItem="1s8-rf-4Od" secondAttribute="top" constant="16" id="ch4-73-aci"/>
                             <constraint firstItem="1s8-rf-4Od" firstAttribute="leading" secondItem="6pn-Ti-4xV" secondAttribute="leadingMargin" id="eYF-eq-JdL"/>
                             <constraint firstAttribute="trailingMargin" secondItem="1s8-rf-4Od" secondAttribute="trailing" id="hbF-zN-cIR"/>
                             <constraint firstItem="1s8-rf-4Od" firstAttribute="top" secondItem="ULv-Bu-zMx" secondAttribute="bottom" id="jmE-SB-n5A"/>
                             <constraint firstAttribute="trailing" secondItem="ZSY-fQ-Mtb" secondAttribute="trailing" id="pU2-hd-wJ5"/>
                             <constraint firstItem="Agg-1b-pdU" firstAttribute="top" secondItem="ZSY-fQ-Mtb" secondAttribute="bottom" id="rtM-af-MDz"/>
+                            <constraint firstItem="Ox3-nD-Euq" firstAttribute="top" secondItem="1s8-rf-4Od" secondAttribute="top" constant="16" id="xJR-kF-BOk"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" id="b3I-sv-mwz"/>
                     <connections>
                         <outlet property="backgroundImageView" destination="ZSY-fQ-Mtb" id="igD-2W-7Jd"/>
+                        <outlet property="closeButton" destination="Ox3-nD-Euq" id="57E-Le-ulf"/>
+                        <outlet property="logoutButton" destination="H7e-ac-TxA" id="dOw-PN-e9F"/>
                         <outlet property="profileImageTapRecognizer" destination="2JF-Im-cVO" id="bjz-1B-Fgj"/>
                         <outlet property="profileImageView" destination="M8e-oa-0ea" id="v76-Ej-S9q"/>
                     </connections>
@@ -492,7 +522,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="close_dark_gray" width="240" height="240"/>
+        <image name="log_out_dark_gray" width="240" height="240"/>
         <image name="login_background" width="1280" height="853"/>
-        <image name="profile-placeholder" width="600" height="600"/>
+        <image name="profile_placeholder" width="600" height="600"/>
     </resources>
 </document>

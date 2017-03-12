@@ -12,6 +12,9 @@ import PKHUD
 
 class ProfileViewController: UIViewController {
 
+    @IBOutlet weak var closeButton: UIButton!
+    @IBOutlet weak var logoutButton: UIButton!
+    
     @IBOutlet weak var backgroundImageView: PFImageView!
     @IBOutlet weak var profileImageView: PFImageView!
     @IBOutlet var profileImageTapRecognizer: UITapGestureRecognizer!
@@ -25,6 +28,14 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
         
         picker.delegate = self
+        
+        // Only show the close button if view controller is pushed modally
+        if let tabBarController = UIApplication.shared.keyWindow?.rootViewController as? UITabBarController,
+           let _ = tabBarController.selectedViewController as? UINavigationController {
+            closeButton.isHidden = true
+        } else {
+            closeButton.isHidden = false
+        }
         
         // Apply blur effect to background
         if !UIAccessibilityIsReduceTransparencyEnabled() {
@@ -63,6 +74,19 @@ class ProfileViewController: UIViewController {
         }
     }
     
+    @IBAction func closeButtonTapped(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func logoutButtonTapped(_ sender: Any) {
+        PFUser.logOutInBackground { _ in
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            if let vc = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController {
+                UIApplication.shared.keyWindow?.rootViewController = vc
+            }
+        }
+    }
+    
     @IBAction func profileImageViewTapped(_ sender: AnyObject) {
         let vc = UIImagePickerController()
         vc.delegate = self
@@ -74,6 +98,9 @@ class ProfileViewController: UIViewController {
     private func configureUI(user: User) {
         
         if let userProfileImageFile = user.userProfileImageFile {
+            closeButton.setImage(UIImage(named: "close_white"), for: .normal)
+            logoutButton.setImage(UIImage(named: "log_out_white"), for: .normal)
+            
             backgroundImageView.file = userProfileImageFile
             backgroundImageView.loadInBackground()
             
